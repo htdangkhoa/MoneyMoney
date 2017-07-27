@@ -83,7 +83,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="87dp"
+                android:layout_marginTop="110dp"
                 android:layout_marginBottom="16dp"
                 android:orientation="vertical"
                 android:id="@+id/linearLayout">
@@ -130,7 +130,9 @@
                 android:orientation="vertical"
                 android:layout_below="@+id/linearLayout"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/linearLayout2">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -174,6 +176,39 @@
                     android:background="#eee"></View>
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dont't have an account?"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="#525252"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView2"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_toEndOf="@+id/textView2"
+                android:layout_toRightOf="@+id/textView2"
+                android:text="@string/sign_up"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:text="SIGN IN" />
 
         </RelativeLayout>
     </RelativeLayout>
