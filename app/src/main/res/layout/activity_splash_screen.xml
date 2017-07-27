@@ -8,8 +8,8 @@
     android:background="@color/colorPrimary">
 
     <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         android:layout_marginLeft="8dp"
@@ -25,7 +25,8 @@
             android:layout_height="168dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            app:srcCompat="@drawable/ic_logo" />
+            app:srcCompat="@drawable/ic_logo"
+            android:layout_marginBottom="16dp"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -33,7 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
             android:text="MoneyMoney"
             android:textColor="#ffffff"
             android:textSize="32dp"
