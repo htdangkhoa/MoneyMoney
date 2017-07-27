@@ -28,28 +28,6 @@
                 android:layout_centerHorizontal="true"
                 android:background="@color/colorPrimary"
                 android:layout_above="@+id/relativeLayout">
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginStart="65dp"
-                    android:layout_marginTop="147dp"
-                    android:ems="10"
-                    android:inputType="textEmailAddress" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/oval_shape"
-                android:id="@+id/view">
             </RelativeLayout>
 
             <RelativeLayout
@@ -58,6 +36,14 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/relativeLayout"></RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/oval_shape"
+                android:id="@+id/view">
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -164,10 +150,11 @@
                         android:layout_toRightOf="@+id/imageView3"
                         android:layout_toEndOf="@+id/imageView3" />
 
-                    <ImageView
+                    <ImageButton
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        app:srcCompat="@drawable/ic_help"/>
+                        app:srcCompat="@drawable/ic_help"
+                        android:background="#00FFFFFF"/>
                 </LinearLayout>
 
                 <View
@@ -204,11 +191,14 @@
             <Button
                 android:id="@+id/button"
                 android:layout_margin="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="46dp"
                 android:layout_below="@+id/textView2"
                 android:layout_centerHorizontal="true"
-                android:text="SIGN IN" />
+                android:text="SIGN IN"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/button_radius"
+                android:textStyle="normal"/>
 
         </RelativeLayout>
     </RelativeLayout>
