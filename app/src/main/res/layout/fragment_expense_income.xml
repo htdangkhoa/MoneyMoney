@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="320dp"
         android:layout_margin="0dp"
         android:id="@+id/relativeLayout2">
 
@@ -41,6 +41,16 @@
             android:background="@color/transparent"
             android:id="@+id/btnToggle"/>
 
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_new"
+            android:background="@color/transparent"
+            android:id="@+id/btnNew"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,14 +58,20 @@
             android:text="Expense"
             android:textColor="#fff"
             android:textSize="35dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pie_chart"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"></com.github.mikephil.charting.charts.PieChart>
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnToggle">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie_chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"></com.github.mikephil.charting.charts.PieChart>
+        </RelativeLayout>
 
         <!--<lecho.lib.hellocharts.view.PieChartView-->
             <!--android:id="@+id/chart"-->

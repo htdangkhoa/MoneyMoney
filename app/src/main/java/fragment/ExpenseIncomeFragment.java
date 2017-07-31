@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +25,12 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import lecho.lib.hellocharts.model.PointValue;
 import lecho.lib.hellocharts.view.PieChartView;
@@ -37,10 +42,9 @@ import lecho.lib.hellocharts.view.PieChartView;
 public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
     ImageButton btnToggle;
     PieChart pie_chart;
-    PieChartView chart;
 
-    float rainfall[] = {98.8f, 123.8f, 161.6f, 24.2f, 55f};
-    String monthNames[] = {"Jan", "Feb", "Mar", "Apr", "May"};
+    float rainfall[] = {2500000, 2200000, 1500000, 3800000, 200000};
+    String monthNames[] = {"Food", "Sport", "Education", "Housing", "Health"};
 
     @Nullable
     @Override
@@ -49,9 +53,29 @@ public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
 
         initialize(view);
 
+        setupChart();
+
+        btnToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Hello", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return  view;
+    }
+
+    private void initialize(View view) {
+        btnToggle = (ImageButton) view.findViewById(R.id.btnToggle);
+        pie_chart = (PieChart) view.findViewById(R.id.pie_chart);
+    }
+
+    private void setupChart() {
+        float sum = 0;
         List<PieEntry> pieEntryList = new ArrayList<>();
         for (int i = 0; i < rainfall.length; i++) {
             pieEntryList.add(new PieEntry(rainfall[i], monthNames[i]));
+            sum = sum + rainfall[i];
         }
         PieDataSet pieDataSet = new PieDataSet(pieEntryList, null);
         PieData pieData = new PieData(pieDataSet);
@@ -59,11 +83,18 @@ public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
         pie_chart.setData(pieData);
         pie_chart.invalidate();
         pie_chart.setUsePercentValues(true);
-        pie_chart.setCenterText("999.999.999");
+
+        DecimalFormatSymbols symbol = new DecimalFormatSymbols();
+        symbol.setDecimalSeparator(',');
+        symbol.setGroupingSeparator('.');
+        DecimalFormat format = (DecimalFormat) NumberFormat.getInstance();
+        format.setDecimalFormatSymbols(symbol);
+        pie_chart.setCenterText(format.format(sum));
+
         pie_chart.setCenterTextSize(22);
 
         pie_chart.setDrawHoleEnabled(true);
-        pie_chart.setHoleRadius(75);
+        pie_chart.setHoleRadius(80);
 
         pieDataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
         pieData.setValueTextSize(14f);
@@ -76,35 +107,24 @@ public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
         pie_chart.setRotationAngle(0);
         pie_chart.setRotationEnabled(true);
 
-        pieDataSet.setSliceSpace(2f);
-        pieDataSet.setSelectionShift(15);
+        pieDataSet.setSliceSpace(3f);
+        pieDataSet.setSelectionShift(5f);
 
         pieDataSet.setXValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
         pieDataSet.setYValuePosition(PieDataSet.ValuePosition.OUTSIDE_SLICE);
 
-        pieDataSet.setValueLinePart1Length(0.25f);
-        pieDataSet.setValueLinePart2Length(0.35f);
+        pieDataSet.setValueLinePart1Length(0.2f);
+        pieDataSet.setValueLinePart2Length(0.3f);
+        pieDataSet.setValueLineColor(Color.parseColor("#525252"));
+
+        pie_chart.setExtraTopOffset(10f);
+        pie_chart.setExtraBottomOffset(20f);
+        pie_chart.setExtraLeftOffset(10f);
+        pie_chart.setExtraRightOffset(10f);
 
         pie_chart.getLegend().setEnabled(false);
 
         pie_chart.setHoleColor(Color.parseColor("#66c6b0"));
         pie_chart.setCenterTextColor(Color.parseColor("#FFFFFF"));
-
-
-        btnToggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Hello", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        return  view;
-    }
-
-    private void initialize(View view) {
-        btnToggle = (ImageButton) view.findViewById(R.id.btnToggle);
-        pie_chart = (PieChart) view.findViewById(R.id.pie_chart);
-//        chart = (PieChartView) view.findViewById(R.id.chart);
     }
 }
