@@ -72,10 +72,5 @@
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"></com.github.mikephil.charting.charts.PieChart>
         </RelativeLayout>
-
-        <!--<lecho.lib.hellocharts.view.PieChartView-->
-            <!--android:id="@+id/chart"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent" />-->
     </RelativeLayout>
 </RelativeLayout>

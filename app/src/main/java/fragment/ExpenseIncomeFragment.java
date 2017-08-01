@@ -32,9 +32,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import lecho.lib.hellocharts.model.PointValue;
-import lecho.lib.hellocharts.view.PieChartView;
-
 /**
  * Created by dangkhoa on 7/30/17.
  */
