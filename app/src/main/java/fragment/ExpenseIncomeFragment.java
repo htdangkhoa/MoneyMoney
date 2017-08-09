@@ -10,7 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.dangkhoa.moneymoney.R;
@@ -32,12 +34,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import MoneyMoneyClasses.StaticClass;
+
 /**
  * Created by dangkhoa on 7/30/17.
  */
 
 public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
     ImageButton btnToggle;
+    RelativeLayout moneyNav;
     PieChart pie_chart;
 
     float rainfall[] = {2500000, 2200000, 1500000, 3800000, 200000};
@@ -52,19 +57,14 @@ public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
 
         setupChart();
 
-        btnToggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "Hello", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         return  view;
     }
 
     private void initialize(View view) {
-        btnToggle = (ImageButton) view.findViewById(R.id.btnToggle);
+//        btnToggle = (ImageButton) view.findViewById(R.id.btnToggle);
         pie_chart = (PieChart) view.findViewById(R.id.pie_chart);
+        moneyNav = (RelativeLayout) view.findViewById(R.id.moneyNav);
+        moneyNav.addView(StaticClass.initNavButton(view.getContext(), view));
     }
 
     private void setupChart() {
