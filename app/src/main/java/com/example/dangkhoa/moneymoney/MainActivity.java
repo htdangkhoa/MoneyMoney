@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import MoneyMoneyClasses.StaticClass;
+import fragment.CardManageFragment;
 import fragment.ExpenseIncomeFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -88,19 +89,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.nav_camera) {
-//            fm.beginTransaction().replace(R.id.content_frame, new ExpenseIncomeFragment()).commit();
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+        switch (id) {
+            case R.id.nav_expense: {
+                fm.beginTransaction().replace(R.id.content_frame, new ExpenseIncomeFragment()).commit();
+                break;
+            }
+            case R.id.nav_income: {
+                break;
+            }
+            case R.id.nav_convert: {
+                break;
+            }
+            case R.id.nav_note: {
+                break;
+            }
+            case R.id.nav_cards: {
+                fm.beginTransaction().replace(R.id.content_frame, new CardManageFragment()).commit();
+                break;
+            }
+            case R.id.nav_settings: {
+                break;
+            }
+            default: break;
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

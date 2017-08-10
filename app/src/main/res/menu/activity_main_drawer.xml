@@ -2,45 +2,51 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group
-        android:id="@+id/nav_expense"
+        android:id="@+id/gr_expense"
         android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_expense"
             android:icon="@drawable/ic_menu_expense"
             android:title="Expense" />
     </group>
     <group
-        android:id="@+id/nav_income"
+        android:id="@+id/gr_income"
         android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_income"
             android:icon="@drawable/ic_menu_income"
             android:title="Income"
             />
     </group>
     <group
-        android:id="@+id/nav_convert"
+        android:id="@+id/gr_convert"
         android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_convert"
             android:icon="@drawable/ic_menu_convert"
             android:title="Convert" />
     </group>
     <group
-        android:id="@+id/nav_note"
+        android:id="@+id/gr_note"
         android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_note"
             android:icon="@drawable/ic_menu_note"
             android:title="Note" />
     </group>
     <group
-        android:id="@+id/nav_cards"
+        android:id="@+id/gr_cards"
         android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_cards"
             android:icon="@drawable/ic_menu_cards"
             android:title="Cards" />
     </group>
     <group
-        android:id="@+id/nav_settings"
+        android:id="@+id/gr_settings"
         android:checkableBehavior="none">
         <item
+            android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_settings"
             android:title="Settings" />
     </group>
