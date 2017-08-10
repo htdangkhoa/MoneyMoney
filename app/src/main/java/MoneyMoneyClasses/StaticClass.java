@@ -27,7 +27,7 @@ public class StaticClass {
         button.setBackgroundColor(ContextCompat.getColor(context, R.color.transparent));
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMargins(45,45,45,45);
+        params.setMargins(50, 40, 50, 40);
 //
         button.setLayoutParams(params);
 

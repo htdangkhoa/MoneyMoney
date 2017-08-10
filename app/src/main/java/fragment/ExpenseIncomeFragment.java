@@ -97,6 +97,7 @@ public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
         pieData.setValueTextSize(14f);
         pieData.setValueTextColor(Color.DKGRAY);
 
+
         pie_chart.animateXY(1000, 1000);
         pie_chart.setDescription(null);
         pie_chart.setEntryLabelTextSize(12f);
@@ -116,8 +117,8 @@ public class ExpenseIncomeFragment extends android.support.v4.app.Fragment {
 
         pie_chart.setExtraTopOffset(10f);
         pie_chart.setExtraBottomOffset(20f);
-        pie_chart.setExtraLeftOffset(10f);
-        pie_chart.setExtraRightOffset(10f);
+        pie_chart.setExtraLeftOffset(35f);
+        pie_chart.setExtraRightOffset(35f);
 
         pie_chart.getLegend().setEnabled(false);
 
